@@ -1,2 +1,9 @@
-<h1>Users#index</h1>
-<p>Find me in app/views/users/index.html.erb</p>
+<h2> Recent Girlfriends</h2>
+
+<% @user.each do |u| %>
+
+	<div><%= u.username %></div>
+	<div><%=u.email %></div>
+	<div><%=u.password %></div>
+	<a href="/users/index"></a>
+	<% end %>
