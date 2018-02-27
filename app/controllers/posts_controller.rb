@@ -1,6 +1,7 @@
 class PostsController < ApplicationController
+
   def index
-    @post = Post.all
+    @posts = Post.all
   end
 
   def new
@@ -8,9 +9,11 @@ class PostsController < ApplicationController
   end
 
   def create
+   
     @post = Post.new(post_params)
+    @post.user_id = current_user.id
     if @post.save
-      flash[:message] "You have created a new post"
+      flash[:message] = "You have created a new post"
       redirect_to '/posts'
     else
       render '/posts/new'
@@ -19,6 +22,7 @@ end
 
   def show
     @post= Post.find(params[:id])
+
   end
 
   def edit

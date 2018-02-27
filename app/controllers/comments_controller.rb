@@ -11,7 +11,7 @@ end
 def create
 	@comment = Comment.new
 	if @comment.save
-		flash [:message] "You've made a new comment"
+		flash [:message] ="You've made a new comment"
 		redirect_to 'posts/index'
 	else
 		redirect_to 'posts/new'

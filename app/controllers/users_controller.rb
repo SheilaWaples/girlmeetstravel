@@ -14,11 +14,12 @@ class UsersController < ApplicationController
   		redirect_to '/users'
   	else
   		flash[:message] = "Try again"
-  		redirect_to_users_new_path
+  		redirect_to users_new_path
   end
 end
 
   def show
+    # @user= User.find(params[:user_id)
   end
 end
 private

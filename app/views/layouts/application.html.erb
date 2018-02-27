@@ -9,6 +9,17 @@
   </head>
 
   <body>
+  	<nav>
+<li><a href="/">Home</a></li>
+<li><a href="/users/index">Recent Girlfriends</a></li>
+<li><a href="/users/new">Sign Up</a></li>
+<li><a href="/posts/new">New Post</a></li>
+<li><a href="/signin">Sign In</a></li>
+<li><%= link_to "Log Out", session_path("current"), method: "delete" %></li> 
+
+</nav>
+
+
     <%= yield %>
   </body>
 </html>
