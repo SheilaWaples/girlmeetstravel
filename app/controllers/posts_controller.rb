@@ -13,17 +13,17 @@ class PostsController < ApplicationController
   def create
    
     @post = Post.new(post_params)
-    @post.user_id = current_user.id
+
     if @post.save
       flash[:message] = "You have created a new post"
-      redirect_to '/posts'
+      redirect_to @post
     else
       render '/posts/new'
   end
 end
 
   def show
-     @post= Post.find(params[:post_id])
+     @post= Post.find(params[:id])
   end
 
   def edit
@@ -36,11 +36,11 @@ end
       @post.destroy
       flash[:message] = "Post Deleted"
     end
-end
+
 
 private
 
 def post_params
   params.require(:post).permit(:title, :content, :user_id)
   end
-
+end

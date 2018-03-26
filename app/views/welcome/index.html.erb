@@ -5,5 +5,13 @@
 <body>
 
 <h1>Girl Meets Travel</h1>
-
 </body>
+<br>
+<br>
+<br>
+ <h3>Recent Posts</h3>
+
+<% @posts.each do |p| %>
+<div><%= p.title %></div>
+<!-- <div><%= p.content %></div> -->
+<% end %>
