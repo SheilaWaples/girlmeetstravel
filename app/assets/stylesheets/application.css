@@ -13,3 +13,9 @@
  *= require_tree .
  *= require_self
  */
+
+body{
+
+	background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS2vHCRSUmwdvEVTwUctTmCoSzZidw5rN-y6RT0laUieT83nnbt) ;
+	background-size: contain;
+}
