@@ -24,4 +24,5 @@ get 'logout', to: "sessions#destroy"
   resources :users   
   resources :posts
   resources :sessions
+  resources :comments
 end

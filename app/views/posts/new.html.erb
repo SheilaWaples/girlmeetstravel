@@ -1,8 +1,10 @@
 <h1>Share A New Adventure</h1>
 <%= form_for @post do |f| %>
-<div>Title<%= f.text_field :title %></div>
+<%= f.label :title %>
+<div><%= f.text_field :title %></div>
 <br>
-<div>Content<%= f.text_area :content %></div>
+<%= f.label :content %>
+<div><%= f.text_area :content %></div>
 <br>
 <%= f.submit %>
 <% end %>

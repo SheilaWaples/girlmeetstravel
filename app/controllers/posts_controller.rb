@@ -1,4 +1,6 @@
 class PostsController < ApplicationController
+ 
+
 
   def index
     @posts = Post.all
@@ -21,8 +23,7 @@ class PostsController < ApplicationController
 end
 
   def show
-    @post= Post.find(params[:id])
-
+     @post= Post.find(params[:post_id])
   end
 
   def edit
@@ -32,6 +33,8 @@ end
     end
 
     def destroy
+      @post.destroy
+      flash[:message] = "Post Deleted"
     end
 end
 
