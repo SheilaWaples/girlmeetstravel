@@ -21,7 +21,8 @@ Rails.application.routes.draw do
   get 'signin', to: "sessions#new"
 
 get 'logout', to: "sessions#destroy"
-  resources :users   
+  resources :users do
+  end
   resources :posts
   resources :sessions
   resources :comments
