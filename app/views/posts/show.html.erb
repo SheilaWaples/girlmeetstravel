@@ -9,5 +9,19 @@
   <%= @post.content %>
 </p>
 
-<%= link_to 'Edit', edit_post_path(@post) %> |
-<%= link_to 'Back', posts_path %>
+<h3>Add A Comment</h3>
+
+<%= form_for Comment.new do |f| %>
+<%= f.label :title%>
+<div><%= f.text_field :title %></div>
+<%= f.label :author%>
+<div><%= f.text_field :author %></div>
+<br>
+<%= f.label :content %>
+<br>
+<%= f.text_area :body, placeholder: "Post a comment!" %>
+
+<br>
+<%= f.submit %>
+<% end %>
+

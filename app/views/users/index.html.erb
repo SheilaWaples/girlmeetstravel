@@ -1,10 +1,8 @@
 <h2> Recent Girlfriends</h2>
 
-<% @user.each do |u| %>
+<%@user.each do |u| %>
 
-	<div><%= u.username %></div>
-	<div><%=u.email %></div>
-	<div><%=u.password %></div>
+	<div><%= link_to u.username %></div>
 	<a href="/"></a>
 	<% end %>
 <br>
