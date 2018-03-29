@@ -2,7 +2,7 @@ class CommentsController < ApplicationController
 	# before_action :authenticate_user!, except: [:index]
 	# before_action :find_post
 
-	private 
+	
 
 	def index
 		@comments = Comment.all
