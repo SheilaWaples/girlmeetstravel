@@ -24,7 +24,10 @@ def create
 	end
 end
 
-
+ def destroy
+      @comment.destroy
+      flash[:message] = "Comment Deleted"
+    end
 private
  
  def comment_params
