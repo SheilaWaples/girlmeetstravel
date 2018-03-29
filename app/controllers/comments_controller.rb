@@ -8,25 +8,26 @@ class CommentsController < ApplicationController
 		@comments = Comment.all
 end
 
-def new
-	@comment = Comment.new
+# def new
+# 	@comment = Comment.new
 
-end
+# end
 
-def create
-	@post = Post.find(params[:post_id])
-	@comment = Comment.new
+def create	
+	@comment = Comment.new(comment_params)
+	@comment.user_id = current_user.id
 	if @comment.save
-		# flash [:message] = "You've made a new comment"
-		redirect_to 'posts/index'
+		 # flash [:message] = "You've made a new comment"
+		redirect_to comments_path
 	else
-		redirect_to 'posts/new'
+		render "/"
 	end
 end
+
 
 private
  
  def comment_params
- 	params.require(:comment).permit(:title, :author,:body)
+ 	params.require(:comment).permit(:title, :author,:body, :post_id, :user_id)
  end
 end
